@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatDonTiecModelStoreContainer" CdmEntityContainer="DatDonTiecEntities3">
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DICHVUs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.DICHVU">
+        <MappingFragment StoreEntitySet="DICHVU">
+          <ScalarProperty Name="MA_DV" ColumnName="MA_DV" />
+          <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+          <ScalarProperty Name="GIADV" ColumnName="GIADV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONDATTIECs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.DONDATTIEC">
+        <MappingFragment StoreEntitySet="DONDATTIEC">
+          <ScalarProperty Name="MA_DD" ColumnName="MA_DD" />
+          <ScalarProperty Name="NHA_MA_NV" ColumnName="NHA_MA_NV" />
+          <ScalarProperty Name="TIM_MA_TC" ColumnName="TIM_MA_TC" />
+          <ScalarProperty Name="SAN_MA_SC" ColumnName="SAN_MA_SC" />
+          <ScalarProperty Name="KHA_MA_KH" ColumnName="KHA_MA_KH" />
+          <ScalarProperty Name="MEN_MA_MENU" ColumnName="MEN_MA_MENU" />
+          <ScalarProperty Name="TENCODAU" ColumnName="TENCODAU" />
+          <ScalarProperty Name="TENCHURE" ColumnName="TENCHURE" />
+          <ScalarProperty Name="NGAYCUOI" ColumnName="NGAYCUOI" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="SOBAN" ColumnName="SOBAN" />
+          <ScalarProperty Name="MA_KH" ColumnName="MA_KH" />
+          <ScalarProperty Name="MA_TC" ColumnName="MA_TC" />
+          <ScalarProperty Name="MA_SC" ColumnName="MA_SC" />
+          <ScalarProperty Name="MA_DV" ColumnName="MA_DV" />
+          <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+          <ScalarProperty Name="MA_MENU" ColumnName="MA_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="MA_KH" ColumnName="MA_KH" />
+          <ScalarProperty Name="TENHO" ColumnName="TENHO" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NAMSINH" ColumnName="NAMSINH" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="MA_MENU" ColumnName="MA_MENU" />
+          <ScalarProperty Name="TRA_MA_TM" ColumnName="TRA_MA_TM" />
+          <ScalarProperty Name="MON_MA_MN" ColumnName="MON_MA_MN" />
+          <ScalarProperty Name="MON_MA_MC" ColumnName="MON_MA_MC" />
+          <ScalarProperty Name="MON_MA_KV" ColumnName="MON_MA_KV" />
+          <ScalarProperty Name="MON_MA_MS" ColumnName="MON_MA_MS" />
+          <ScalarProperty Name="MON_MA_MP" ColumnName="MON_MA_MP" />
+          <ScalarProperty Name="TENMENU" ColumnName="TENMENU" />
+          <ScalarProperty Name="GIATONG" ColumnName="GIATONG" />
+          <ScalarProperty Name="MA_KV" ColumnName="MA_KV" />
+          <ScalarProperty Name="MA_MP" ColumnName="MA_MP" />
+          <ScalarProperty Name="MA_MC" ColumnName="MA_MC" />
+          <ScalarProperty Name="MA_MS" ColumnName="MA_MS" />
+          <ScalarProperty Name="MA_MN" ColumnName="MA_MN" />
+          <ScalarProperty Name="MA_TM" ColumnName="MA_TM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONCHINHs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MONCHINH">
+        <MappingFragment StoreEntitySet="MONCHINH">
+          <ScalarProperty Name="MA_MC" ColumnName="MA_MC" />
+          <ScalarProperty Name="TENMON" ColumnName="TENMON" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONKHAIVIs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MONKHAIVI">
+        <MappingFragment StoreEntitySet="MONKHAIVI">
+          <ScalarProperty Name="MA_KV" ColumnName="MA_KV" />
+          <ScalarProperty Name="TENMON" ColumnName="TENMON" />
+          <ScalarProperty Name="GIACA" ColumnName="GIACA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONNUOCs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MONNUOC">
+        <MappingFragment StoreEntitySet="MONNUOC">
+          <ScalarProperty Name="MA_MN" ColumnName="MA_MN" />
+          <ScalarProperty Name="TENNUOC" ColumnName="TENNUOC" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONPHUs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MONPHU">
+        <MappingFragment StoreEntitySet="MONPHU">
+          <ScalarProperty Name="MA_MP" ColumnName="MA_MP" />
+          <ScalarProperty Name="TENMON" ColumnName="TENMON" />
+          <ScalarProperty Name="GIACA" ColumnName="GIACA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONSUPs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.MONSUP">
+        <MappingFragment StoreEntitySet="MONSUP">
+          <ScalarProperty Name="MA_MS" ColumnName="MA_MS" />
+          <ScalarProperty Name="TENSUP" ColumnName="TENSUP" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANHCUOIs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.SANHCUOI">
+        <MappingFragment StoreEntitySet="SANHCUOI">
+          <ScalarProperty Name="MA_SC" ColumnName="MA_SC" />
+          <ScalarProperty Name="MA_DD" ColumnName="MA_DD" />
+          <ScalarProperty Name="TENSANH" ColumnName="TENSANH" />
+          <ScalarProperty Name="VITRI" ColumnName="VITRI" />
+          <ScalarProperty Name="SUCCHUA" ColumnName="SUCCHUA" />
+          <ScalarProperty Name="SOBAN" ColumnName="SOBAN" />
+          <ScalarProperty Name="GIADAT" ColumnName="GIADAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DatDonTiecModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMETOCHUCs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.TIMETOCHUC">
+        <MappingFragment StoreEntitySet="TIMETOCHUC">
+          <ScalarProperty Name="MA_TC" ColumnName="MA_TC" />
+          <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+          <ScalarProperty Name="GIO" ColumnName="GIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANGMIENGs">
+      <EntityTypeMapping TypeName="DatDonTiecModel.TRANGMIENG">
+        <MappingFragment StoreEntitySet="TRANGMIENG">
+          <ScalarProperty Name="MA_TM" ColumnName="MA_TM" />
+          <ScalarProperty Name="TENTM" ColumnName="TENTM" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DATDV" TypeName="DatDonTiecModel.DATDV" StoreEntitySet="DATDV">
+      <EndProperty Name="DICHVU">
+        <ScalarProperty Name="MA_DV" ColumnName="MA_DV" />
+      </EndProperty>
+      <EndProperty Name="DONDATTIEC">
+        <ScalarProperty Name="MA_DD" ColumnName="MA_DD" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatDonTiecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="20" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
+    <Property Name="QUYEN" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DATDV">
+    <Key>
+      <PropertyRef Name="MA_DV" />
+      <PropertyRef Name="MA_DD" />
+    </Key>
+    <Property Name="MA_DV" Type="int" Nullable="false" />
+    <Property Name="MA_DD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DICHVU">
+    <Key>
+      <PropertyRef Name="MA_DV" />
+    </Key>
+    <Property Name="MA_DV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENDICHVU" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIADV" Type="float" />
+  </EntityType>
+  <EntityType Name="DONDATTIEC">
+    <Key>
+      <PropertyRef Name="MA_DD" />
+    </Key>
+    <Property Name="MA_DD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NHA_MA_NV" Type="int" Nullable="false" />
+    <Property Name="TIM_MA_TC" Type="int" Nullable="false" />
+    <Property Name="SAN_MA_SC" Type="int" Nullable="false" />
+    <Property Name="KHA_MA_KH" Type="int" Nullable="false" />
+    <Property Name="MEN_MA_MENU" Type="int" Nullable="false" />
+    <Property Name="TENCODAU" Type="nvarchar" MaxLength="255" />
+    <Property Name="TENCHURE" Type="nvarchar" MaxLength="255" />
+    <Property Name="NGAYCUOI" Type="datetime" />
+    <Property Name="TONGTIEN" Type="float" />
+    <Property Name="SOBAN" Type="int" />
+    <Property Name="MA_KH" Type="int" />
+    <Property Name="MA_TC" Type="int" />
+    <Property Name="MA_SC" Type="int" />
+    <Property Name="MA_DV" Type="int" />
+    <Property Name="MA_NV" Type="int" />
+    <Property Name="MA_MENU" Type="int" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MA_KH" />
+    </Key>
+    <Property Name="MA_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENHO" Type="nvarchar" MaxLength="255" />
+    <Property Name="CMND" Type="int" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="NAMSINH" Type="int" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="MA_MENU" />
+    </Key>
+    <Property Name="MA_MENU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TRA_MA_TM" Type="int" />
+    <Property Name="MON_MA_MN" Type="int" />
+    <Property Name="MON_MA_MC" Type="int" />
+    <Property Name="MON_MA_KV" Type="int" />
+    <Property Name="MON_MA_MS" Type="int" />
+    <Property Name="MON_MA_MP" Type="int" />
+    <Property Name="TENMENU" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIATONG" Type="float" />
+    <Property Name="MA_KV" Type="int" />
+    <Property Name="MA_MP" Type="int" />
+    <Property Name="MA_MC" Type="int" />
+    <Property Name="MA_MS" Type="int" />
+    <Property Name="MA_MN" Type="int" />
+    <Property Name="MA_TM" Type="int" />
+  </EntityType>
+  <EntityType Name="MONCHINH">
+    <Key>
+      <PropertyRef Name="MA_MC" />
+    </Key>
+    <Property Name="MA_MC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENMON" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIA" Type="float" />
+  </EntityType>
+  <EntityType Name="MONKHAIVI">
+    <Key>
+      <PropertyRef Name="MA_KV" />
+    </Key>
+    <Property Name="MA_KV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENMON" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIACA" Type="float" />
+  </EntityType>
+  <EntityType Name="MONNUOC">
+    <Key>
+      <PropertyRef Name="MA_MN" />
+    </Key>
+    <Property Name="MA_MN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENNUOC" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIA" Type="float" />
+  </EntityType>
+  <EntityType Name="MONPHU">
+    <Key>
+      <PropertyRef Name="MA_MP" />
+    </Key>
+    <Property Name="MA_MP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENMON" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIACA" Type="float" />
+  </EntityType>
+  <EntityType Name="MONSUP">
+    <Key>
+      <PropertyRef Name="MA_MS" />
+    </Key>
+    <Property Name="MA_MS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENSUP" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIA" Type="float" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+    </Key>
+    <Property Name="MA_NV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TENNV" Type="nvarchar" MaxLength="255" />
+    <Property Name="CHUCVU" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SANHCUOI">
+    <Key>
+      <PropertyRef Name="MA_SC" />
+    </Key>
+    <Property Name="MA_SC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_DD" Type="int" />
+    <Property Name="TENSANH" Type="nvarchar" MaxLength="255" />
+    <Property Name="VITRI" Type="int" />
+    <Property Name="SUCCHUA" Type="int" />
+    <Property Name="SOBAN" Type="int" />
+    <Property Name="GIADAT" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIMETOCHUC">
+    <Key>
+      <PropertyRef Name="MA_TC" />
+    </Key>
+    <Property Name="MA_TC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGAY" Type="datetime" />
+    <Property Name="GIO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TRANGMIENG">
+    <Key>
+      <PropertyRef Name="MA_TM" />
+    </Key>
+    <Property Name="MA_TM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENTM" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIA" Type="float" />
+  </EntityType>
+  <Association Name="FK_DATDV_DATDV_DICHVU">
+    <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+    <End Role="DATDV" Type="Self.DATDV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DICHVU">
+        <PropertyRef Name="MA_DV" />
+      </Principal>
+      <Dependent Role="DATDV">
+        <PropertyRef Name="MA_DV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATDV_DATDV2_DONDATTI">
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="1" />
+    <End Role="DATDV" Type="Self.DATDV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATTIEC">
+        <PropertyRef Name="MA_DD" />
+      </Principal>
+      <Dependent Role="DATDV">
+        <PropertyRef Name="MA_DD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATTI_DATMENU_MENU">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="1" />
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="MA_MENU" />
+      </Principal>
+      <Dependent Role="DONDATTIEC">
+        <PropertyRef Name="MEN_MA_MENU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATTI_DATSANH2_SANHCUOI">
+    <End Role="SANHCUOI" Type="Self.SANHCUOI" Multiplicity="1" />
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANHCUOI">
+        <PropertyRef Name="MA_SC" />
+      </Principal>
+      <Dependent Role="DONDATTIEC">
+        <PropertyRef Name="SAN_MA_SC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATTI_KHACHDAT_KHACHHAN">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MA_KH" />
+      </Principal>
+      <Dependent Role="DONDATTIEC">
+        <PropertyRef Name="KHA_MA_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATTI_LENDON_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MA_NV" />
+      </Principal>
+      <Dependent Role="DONDATTIEC">
+        <PropertyRef Name="NHA_MA_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATTI_TGDIENRA_TIMETOCH">
+    <End Role="TIMETOCHUC" Type="Self.TIMETOCHUC" Multiplicity="1" />
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIMETOCHUC">
+        <PropertyRef Name="MA_TC" />
+      </Principal>
+      <Dependent Role="DONDATTIEC">
+        <PropertyRef Name="TIM_MA_TC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_KHAIVI_MONKHAIV">
+    <End Role="MONKHAIVI" Type="Self.MONKHAIVI" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONKHAIVI">
+        <PropertyRef Name="MA_KV" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MON_MA_KV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_MONCHINH_MONCHINH">
+    <End Role="MONCHINH" Type="Self.MONCHINH" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONCHINH">
+        <PropertyRef Name="MA_MC" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MON_MA_MC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_MONNUOC_MONNUOC">
+    <End Role="MONNUOC" Type="Self.MONNUOC" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONNUOC">
+        <PropertyRef Name="MA_MN" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MON_MA_MN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_MONPHU_MONPHU">
+    <End Role="MONPHU" Type="Self.MONPHU" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONPHU">
+        <PropertyRef Name="MA_MP" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MON_MA_MP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_MONSUP_MONSUP">
+    <End Role="MONSUP" Type="Self.MONSUP" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONSUP">
+        <PropertyRef Name="MA_MS" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MON_MA_MS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_TRANGMIEN_TRANGMIE">
+    <End Role="TRANGMIENG" Type="Self.TRANGMIENG" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGMIENG">
+        <PropertyRef Name="MA_TM" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="TRA_MA_TM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHANVIEN_ACCOUNT">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANHCUOI_DATSANH_DONDATTI">
+    <End Role="DONDATTIEC" Type="Self.DONDATTIEC" Multiplicity="0..1" />
+    <End Role="SANHCUOI" Type="Self.SANHCUOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATTIEC">
+        <PropertyRef Name="MA_DD" />
+      </Principal>
+      <Dependent Role="SANHCUOI">
+        <PropertyRef Name="MA_DD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatDonTiecModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATDV" EntityType="Self.DATDV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONDATTIEC" EntityType="Self.DONDATTIEC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENU" EntityType="Self.MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONCHINH" EntityType="Self.MONCHINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONKHAIVI" EntityType="Self.MONKHAIVI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONNUOC" EntityType="Self.MONNUOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONPHU" EntityType="Self.MONPHU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONSUP" EntityType="Self.MONSUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANHCUOI" EntityType="Self.SANHCUOI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIMETOCHUC" EntityType="Self.TIMETOCHUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANGMIENG" EntityType="Self.TRANGMIENG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DATDV_DATDV_DICHVU" Association="Self.FK_DATDV_DATDV_DICHVU">
+      <End Role="DICHVU" EntitySet="DICHVU" />
+      <End Role="DATDV" EntitySet="DATDV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATDV_DATDV2_DONDATTI" Association="Self.FK_DATDV_DATDV2_DONDATTI">
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+      <End Role="DATDV" EntitySet="DATDV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATTI_DATMENU_MENU" Association="Self.FK_DONDATTI_DATMENU_MENU">
+      <End Role="MENU" EntitySet="MENU" />
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATTI_DATSANH2_SANHCUOI" Association="Self.FK_DONDATTI_DATSANH2_SANHCUOI">
+      <End Role="SANHCUOI" EntitySet="SANHCUOI" />
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATTI_KHACHDAT_KHACHHAN" Association="Self.FK_DONDATTI_KHACHDAT_KHACHHAN">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATTI_LENDON_NHANVIEN" Association="Self.FK_DONDATTI_LENDON_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATTI_TGDIENRA_TIMETOCH" Association="Self.FK_DONDATTI_TGDIENRA_TIMETOCH">
+      <End Role="TIMETOCHUC" EntitySet="TIMETOCHUC" />
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_KHAIVI_MONKHAIV" Association="Self.FK_MENU_KHAIVI_MONKHAIV">
+      <End Role="MONKHAIVI" EntitySet="MONKHAIVI" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_MONCHINH_MONCHINH" Association="Self.FK_MENU_MONCHINH_MONCHINH">
+      <End Role="MONCHINH" EntitySet="MONCHINH" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_MONNUOC_MONNUOC" Association="Self.FK_MENU_MONNUOC_MONNUOC">
+      <End Role="MONNUOC" EntitySet="MONNUOC" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_MONPHU_MONPHU" Association="Self.FK_MENU_MONPHU_MONPHU">
+      <End Role="MONPHU" EntitySet="MONPHU" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_MONSUP_MONSUP" Association="Self.FK_MENU_MONSUP_MONSUP">
+      <End Role="MONSUP" EntitySet="MONSUP" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_TRANGMIEN_TRANGMIE" Association="Self.FK_MENU_TRANGMIEN_TRANGMIE">
+      <End Role="TRANGMIENG" EntitySet="TRANGMIENG" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHANVIEN_ACCOUNT" Association="Self.FK_NHANVIEN_ACCOUNT">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANHCUOI_DATSANH_DONDATTI" Association="Self.FK_SANHCUOI_DATSANH_DONDATTI">
+      <End Role="DONDATTIEC" EntitySet="DONDATTIEC" />
+      <End Role="SANHCUOI" EntitySet="SANHCUOI" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

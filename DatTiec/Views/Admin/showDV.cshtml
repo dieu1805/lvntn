@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DatTiec.DICHVU>
+
+@{
+    ViewBag.Title = "showDV";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH DỊCH VỤ</h4>
+						<p class="card-category">@Html.ActionLink("Thêm dịch vụ", "ThemDV")</p>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Tên Dịch Vụ</th>
+							<th>Giá Dịch Vụ</th>
+							<th></th>
+							</thead>
+							
+								@foreach (var item in Model)
+								{
+									<tr>					
+										<td>
+											@Html.DisplayFor(modelItem => item.TENDICHVU)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.GIADV)
+										</td>
+										<td>				
+											@Html.ActionLink("Xóa", "XoaDV", new {  id=item.MA_DV })
+										</td>
+									</tr>
+								}
+
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

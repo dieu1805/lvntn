@@ -1,0 +1,107 @@
+﻿@model DatTiec.MENU
+
+@{
+	ViewBag.Title = "taoMenu";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("taoMenu", "User", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+
+	<div class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card strpied-tabled-with-hover">
+						<div class="card-header ">
+							<h4 class="card-title">TẠO MENU MỚI</h4>
+
+						</div>
+						<div class="card-body table-full-width table-responsive">
+
+							<hr />
+							@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+							<div class="form-group">
+								<a class="control-label"> Tên menu</a>
+								<div class="col-md-10">
+									@Html.EditorFor(model => model.TENMENU, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.TENMENU, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Món Khai Vị</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_KV", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_KV, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Món Phụ</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_MP", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_MP, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Món Chính</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_MC", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_MC, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Món Súp</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_MS", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_MS, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Nước Uống</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_MN", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_MN, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Tráng Miệng</a>
+								<div class="col-md-10">
+									@Html.DropDownList("MA_TM", null, htmlAttributes: new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.MA_TM, "", new { @class = "text-danger" })
+								</div>
+							</div>
+							<div class="form-group">
+								<a class="control-label"> Thành Tiền</a>
+								<div class="col-md-10">
+									@Html.EditorFor(model => model.GIATONG, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.GIATONG, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<input type="submit" value="Lưu" class="btn btn-default" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
+

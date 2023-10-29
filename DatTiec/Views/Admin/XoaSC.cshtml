@@ -1,0 +1,80 @@
+﻿@model DatTiec.SANHCUOI
+
+@{
+    ViewBag.Title = "XoaSC";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">XÓA SẢNH CƯỚI</h4>
+
+					</div>
+					<div>
+
+						
+							<hr />
+							<dl class="dl-horizontal">
+								
+
+								<dt>
+									Tên Sảnh
+								</dt>
+
+								<dd>
+									@Html.DisplayFor(model => model.TENSANH)
+								</dd>
+
+								<dt>
+									Vị Trí
+								</dt>
+
+								<dd>
+									@Html.DisplayFor(model => model.VITRI)
+								</dd>
+
+								<dt>
+									Sức Chứa
+								</dt>
+
+								<dd>
+									@Html.DisplayFor(model => model.SUCCHUA)
+								</dd>
+
+								<dt>
+									Số Bàn
+								</dt>
+
+								<dd>
+									@Html.DisplayFor(model => model.SOBAN)
+								</dd>
+
+								<dt>
+									Giá Đặt
+								</dt>
+
+								<dd>
+									@Html.DisplayFor(model => model.GIADAT)
+								</dd>
+
+							</dl>
+
+							@using (Html.BeginForm())
+							{
+								@Html.AntiForgeryToken()
+
+								<div class="form-actions no-color">
+									<input type="submit" value="Xóa" class="btn btn-default" /> |
+									@Html.ActionLink("Trở về", "showSC")
+								</div>
+							}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

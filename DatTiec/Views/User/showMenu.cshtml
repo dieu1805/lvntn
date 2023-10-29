@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DatTiec.MENU>
+
+@{
+    ViewBag.Title = "showMenu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH MENU</h4>
+						<p class="card-category">@Html.ActionLink("Tạo Menu Mới", "taoMenu")</p>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Tên Menu</th>
+							<th>Món Khai Vị</th>
+							<th>Món Phụ</th>
+							<th>Món Chính</th>
+							<th>Món Súp</th>
+							<th>Nước Uống</th>
+							<th>Tráng Miệng</th>
+							<th>Tổng Tiền</th>
+							<th></th>
+							</thead>
+
+
+								@foreach (var item in Model)
+								{
+						<tr>
+
+							<td>
+								@Html.DisplayFor(modelItem => item.TENMENU)
+							</td>
+
+							<td>
+								@Html.DisplayFor(modelItem => item.MONKHAIVI.TENMON)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MONPHU.TENMON)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MONCHINH.TENMON)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MONSUP.TENSUP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MONNUOC.TENNUOC)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TRANGMIENG.TENTM)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.GIATONG)
+							</td>
+							<td>
+								
+								@Html.ActionLink("Xóa", "Delete", new { /* id=item.PrimaryKey */ })
+							</td>
+						</tr>
+								}
+
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

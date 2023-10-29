@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DatTiec.KHACHHANG>
+
+@{
+    ViewBag.Title = "showKH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH KHAÁCH HÀNG ĐÃ ĐẶT</h4>
+						<p class="card-category">@Html.ActionLink("Thêm khách hàng mới", "themKH")</p>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Họ Tên</th>
+							<th>Chứng minh thư</th>
+							<th>Sđt</th>
+							<th>Năm Sinh</th>
+							<th>Địa chỉ</th>
+							<th></th>
+							</thead>
+							
+
+								@foreach (var item in Model)
+								{
+									<tr>
+										
+										<td>
+											@Html.DisplayFor(modelItem => item.TENHO)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.CMND)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.SDT)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.NAMSINH)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.DIACHI)
+										</td>
+										<td>
+											
+											@Html.ActionLink("Xóa", "XoaKH", new { id=item.MA_KH })
+										</td>
+									</tr>
+								}
+
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d2b19e1fc5d402eb9d0db71e77ec140" Name="Diagram1">
+        <EntityTypeShape EntityType="DatDonTiecModel.ACCOUNT" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.DICHVU" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.DONDATTIEC" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.KHACHHANG" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MENU" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MONCHINH" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MONKHAIVI" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MONNUOC" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MONPHU" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.MONSUP" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.NHANVIEN" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.SANHCUOI" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.TIMETOCHUC" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatDonTiecModel.TRANGMIENG" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <AssociationConnector Association="DatDonTiecModel.FK_NHANVIEN_ACCOUNT" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_DONDATTI_DATMENU_MENU" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_DONDATTI_DATSANH2_SANHCUOI" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_DONDATTI_KHACHDAT_KHACHHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_DONDATTI_LENDON_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_DONDATTI_TGDIENRA_TIMETOCH" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_SANHCUOI_DATSANH_DONDATTI" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_KHAIVI_MONKHAIV" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_MONCHINH_MONCHINH" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_MONNUOC_MONNUOC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_MONPHU_MONPHU" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_MONSUP_MONSUP" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.FK_MENU_TRANGMIEN_TRANGMIE" ManuallyRouted="false" />
+        <AssociationConnector Association="DatDonTiecModel.DATDV" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

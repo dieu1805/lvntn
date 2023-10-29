@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DatTiec.MONNUOC>
+
+@{
+    ViewBag.Title = "showMN";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH MÓN NƯỚC</h4>
+						<p class="card-category">@Html.ActionLink("Thêm món mới", "ThemMN")</p>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Tên Món</th>
+							<th>Giá Cả</th>
+							<th></th>
+							</thead>
+
+							@foreach (var item in Model)
+							{
+								<tr>
+									
+									<td>
+										@Html.DisplayFor(modelItem => item.TENNUOC)
+									</td>
+									<td>
+										@Html.DisplayFor(modelItem => item.GIA)
+									</td>
+									<td>
+										
+										@Html.ActionLink("Xóa", "XoaMN", new {  id=item.MA_MN})
+									</td>
+								</tr>
+							}
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DatTiec.MONCHINH>
+
+@{
+	ViewBag.Title = "showMC";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH MÓN CHÍNH</h4>
+						<p class="card-category">@Html.ActionLink("Thêm món mới", "ThemMC")</p>
+						
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Tên Món</th>
+							<th>Giá Cả</th>
+							<th></th>
+							</thead>
+
+							@foreach (var item in Model)
+							{
+								<tbody>
+									<tr>		
+										<td>
+											@Html.DisplayFor(modelItem => item.TENMON)
+										</td>
+										<td>
+											@Html.DisplayFor(modelItem => item.GIA)
+										</td>
+										<td>
+											
+											@Html.ActionLink("Xóa", "XoaMC", new {  id=item.MA_MC })
+										</td>
+									</tr>
+								</tbody>
+
+							}
+
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+							
+							
+
+								

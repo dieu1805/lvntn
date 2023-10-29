@@ -1,0 +1,49 @@
+﻿@model DatTiec.ACCOUNT
+
+@{
+	ViewBag.Title = "Dangnhap";
+	Layout = "~/Views/Shared/_LoginView.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						ĐĂNG NHẬP
+					</span>
+
+					<div class="form-group">
+						<a class="control-label"> Tên tài khoản</a>
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.USERNAME, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						<a class="control-label"> Mật khẩu </a>
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text-danger" })
+
+						</div>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Đăng Nhập
+						</button>
+					</div>
+					
+
+				</form>
+			</div>
+		</div>
+	</div>
+}
+
+
+

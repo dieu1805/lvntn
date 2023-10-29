@@ -1,0 +1,61 @@
+﻿@model DatTiec.DICHVU
+
+@{
+	ViewBag.Title = "themDV";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("ThemDV", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+
+	<div class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card strpied-tabled-with-hover">
+						<div class="card-header ">
+							<h4 class="card-title">THÊM DỊCH VỤ</h4>
+
+						</div>
+						<div class="card-body table-full-width table-responsive">
+
+
+							<hr />
+							@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+							<div class="form-group">
+								<a class="control-label"> Tên dịch vụ</a>
+								<div class="col-md-10">
+									@Html.EditorFor(model => model.TENDICHVU, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.TENDICHVU, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<a class="control-label"> Giá dịch vụ</a>
+								<div class="col-md-10">
+									@Html.EditorFor(model => model.GIADV, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.GIADV, "", new { @class = "text-danger" })
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<input type="submit" value="Lưu" class="btn btn-default" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	@Html.ActionLink("Trở về", "showDV")
+</div>

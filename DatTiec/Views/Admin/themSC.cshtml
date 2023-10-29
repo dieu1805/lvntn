@@ -1,0 +1,83 @@
+﻿@model DatTiec.SANHCUOI
+
+@{
+    ViewBag.Title = "themSC";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("ThemSC", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">THÊM SẢNH CƯỚI</h4>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<hr />
+						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+						
+
+						<div class="form-group">
+							<a class="control-label"> Tên sảnh cưới</a>
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.TENSANH, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.TENSANH, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<a class="control-label"> Vị Trí</a>
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.VITRI, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.VITRI, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<a class="control-label"> Sức Chứa</a>
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.SUCCHUA, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.SUCCHUA, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<a class="control-label"> Số Bàn</a>
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.SOBAN, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.SOBAN, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<a class="control-label"> Giá Đặt</a>
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.GIADAT, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.GIADAT, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<input type="submit" value="Lưu" class="btn btn-default" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+					}
+
+					<div>
+						@Html.ActionLink("Trở về", "showSC")
+					</div>

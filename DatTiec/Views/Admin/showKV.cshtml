@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DatTiec.MONKHAIVI>
+
+@{
+    ViewBag.Title = "showKV";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card strpied-tabled-with-hover">
+					<div class="card-header ">
+						<h4 class="card-title">DANH SÁCH MÓN KHAI VỊ</h4>
+						<p class="card-category">@Html.ActionLink("Thêm món mới", "ThemKV")</p>
+
+					</div>
+					<div class="card-body table-full-width table-responsive">
+						<table class="table table-hover table-striped">
+							<thead>
+							<th>Tên Món Khai Vị</th>
+							<th>Giá Cả</th>
+							<th></th>
+							</thead>
+
+							@foreach (var item in Model)
+							{
+								<tr>
+									
+									<td>
+										@Html.DisplayFor(modelItem => item.TENMON)
+									</td>
+									<td>
+										@Html.DisplayFor(modelItem => item.GIACA)
+									</td>
+									<td>
+										
+										@Html.ActionLink("Xóa", "XoaKV", new {  id=item.MA_KV })
+									</td>
+								</tr>
+							}
+
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+							
